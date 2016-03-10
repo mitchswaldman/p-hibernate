@@ -11,12 +11,6 @@ public class Topping {
 	private String topping;
 	private double price;
 	
-	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinTable(name="order_topping", 
-				joinColumns={@JoinColumn(name="topping_id")}, 
-				inverseJoinColumns={@JoinColumn(name="order_id")})
-	private List<Order> orders;
-	
 	public Topping(){
 		
 	}
@@ -45,12 +39,6 @@ public class Topping {
 	}
 	public void setTid(int tid) {
 		this.tid = tid;
-	}
-	public List<Order> getOrders() {
-		return orders;
-	}
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
 	}
 	
 	@Override
